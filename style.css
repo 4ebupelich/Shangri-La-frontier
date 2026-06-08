@@ -273,4 +273,494 @@ main {
 
 .filter-buttons {
     display: flex;
-    gap: 10
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--neon-green);
+    color: var(--primary-dark);
+}
+
+/* CSS GRID ГАЛЕРЕЯ (ПР №3) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Вид списком */
+.gallery-grid.list-view {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.image-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--neon-green);
+}
+
+.card-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-card:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.like-btn, .zoom-btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--text-white);
+    transition: all 0.3s;
+}
+
+.like-btn.liked {
+    background: #ff4757;
+    color: white;
+}
+
+.zoom-btn:hover {
+    background: var(--neon-green);
+    color: var(--primary-dark);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.image-title {
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.image-date {
+    color: var(--neon-blue);
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.image-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.image-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(0, 255, 204, 0.2);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 11px;
+}
+
+/* Информационный блок галереи */
+.gallery-info {
+    background: linear-gradient(135deg, var(--accent-purple), #3a5a8c);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* ---------- 6. СТИЛИ ДЛЯ СТРАНИЦЫ КОНТАКТОВ (ПР №4) ---------- */
+.contacts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contacts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 280px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-avatar i {
+    font-size: 80px;
+    color: var(--neon-green);
+    margin-bottom: 20px;
+}
+
+.info-card h2 {
+    color: var(--text-white);
+    margin-bottom: 5px;
+}
+
+.specialization {
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    text-align: left;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.contact-details p {
+    margin: 10px 0;
+}
+
+.contact-details i {
+    width: 30px;
+    color: var(--neon-green);
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.social-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-btn.telegram { background: #0088cc; }
+.social-btn.vk { background: #4c75a3; }
+.social-btn.discord { background: #5865f2; }
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.work-schedule {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+/* Форма обратной связи (ПР №4) */
+.feedback-form {
+    flex: 2;
+    min-width: 300px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+.feedback-form h2 {
+    margin-bottom: 20px;
+    color: var(--neon-blue);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-white);
+}
+
+.required {
+    color: #ff4757;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    border-radius: 10px;
+    color: var(--text-white);
+    transition: all 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--neon-green);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+.form-input:valid:not(:placeholder-shown) {
+    border-color: var(--neon-green);
+}
+
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: #ff4757;
+}
+
+/* Псевдоэлемент для placeholder (ПР №4) */
+.form-input::placeholder {
+    color: rgba(224, 224, 224, 0.5);
+    font-style: italic;
+}
+
+/* Псевдоэлемент ::before для меток */
+.form-group label::before {
+    content: "►";
+    color: var(--neon-green);
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+/* Псевдоэлемент ::after для обязательных полей */
+.form-group:has(input[required]) label::after {
+    content: " (обязательно)";
+    color: #ff4757;
+    font-size: 11px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.checkbox-group label::before {
+    content: "";
+    margin-right: 0;
+}
+
+/* Стилизация чекбокса при :checked */
+.checkbox-group input:checked + label {
+    color: var(--neon-green);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--neon-green);
+    color: var(--primary-dark);
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 204, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.form-status {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* FAQ секция */
+.faq-section {
+    margin-top: 40px;
+}
+
+.faq-section h2 {
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid var(--neon-green);
+}
+
+.faq-item h3 {
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+/* ---------- 7. МОДАЛЬНОЕ ОКНО ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 50px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* ---------- 8. ПОДВАЛ ---------- */
+footer {
+    background: rgba(10, 10, 26, 0.95);
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    border-top: 1px solid var(--neon-green);
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.js-status {
+    color: var(--neon-green);
+}
+
+.anime-quote {
+    font-style: italic;
+    color: var(--neon-blue);
+}
+
+/* Выделение текста (псевдоэлемент ::selection) */
+::selection {
+    background: var(--neon-green);
+    color: var(--primary-dark);
+}
+
+/* ---------- 9. АДАПТИВНОСТЬ (МЕДИА-ЗАПРОСЫ) ---------- */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .controls-panel {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h2 {
+        font-size: 24px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacts-wrapper {
+        flex-direction: column;
+    }
+    
+    .filter-buttons {
+        justify-content: center;
+    }
+    
+    .filters {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .flex-nav a {
+        justify-content: center;
+    }
+    
+    .reasons-grid {
+        grid-template-columns: 1fr;
+    }
+}
