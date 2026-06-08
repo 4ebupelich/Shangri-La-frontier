@@ -1,7 +1,7 @@
 /* ========================================
-   ПРАКТИЧАСКАЯ РАБОТА №2,3,4,5
+   ПРАКТИЧЕСКАЯ РАБОТА №2,3,4,5
    Тема: Рубеж Шангри-Ла (Shangri-La Frontier)
-   Стиль: Каноничная цветовая гамма (песок, охра, закат, красный)
+   Стиль: ТОЛЬКО СИНИЕ ЦВЕТА
    ======================================== */
 
 /* ---------- 1. СБРОС СТИЛЕЙ ---------- */
@@ -11,35 +11,35 @@
     box-sizing: border-box;
 }
 
-/* ---------- 2. ПЕРЕМЕННЫЕ ПО АНИМЕ ---------- */
+/* ---------- 2. СИНЯЯ ЦВЕТОВАЯ ГАММА ---------- */
 :root {
-    /* Цвета пустыни и заката из аниме */
-    --sand-dark: #2a1f1a;      /* Тёмный песок/почва */
-    --sand-medium: #5c3d2e;    /* Средний оттенок земли */
-    --sand-light: #b87c4f;     /* Светлый песок */
-    --sunset: #d96c2b;         /* Оранжевый закат */
-    --sunset-dark: #b5451a;     /* Тёмный оранжевый */
-    --red-accent: #c43a2b;      /* Акцентный красный (враги/боссы) */
-    --gold: #e8a735;            /* Золотой (эпические моменты) */
-    --text-light: #f0e6d8;      /* Светлый текст (как песок на свету) */
-    --text-muted: #c9b89a;      /* Приглушённый текст */
-    --card-bg: rgba(44, 30, 24, 0.95);  /* Фон карточек */
-    --border-glow: rgba(217, 108, 43, 0.4);  /* Свечение заката */
+    --blue-deep: #0a0f2a;      /* Глубокий тёмно-синий */
+    --blue-dark: #0f1a3a;       /* Тёмно-синий */
+    --blue-mid: #1a2a5a;        /* Средний синий */
+    --blue-primary: #2a4a8a;    /* Основной синий */
+    --blue-light: #4a7ab5;      /* Светлый синий */
+    --blue-soft: #6a9ace;       /* Мягкий голубовато-синий */
+    --blue-pale: #8ab5e0;       /* Бледный синий */
+    --text-white: #e8f0ff;      /* Белый с синим оттенком */
+    --text-muted: #a0b8d4;      /* Приглушённый синеватый */
+    --card-bg: rgba(15, 26, 58, 0.95);
+    --border-blue: #2a4a8a;
+    --shadow-blue: rgba(42, 74, 138, 0.3);
 }
 
 body {
-    font-family: 'Segoe UI', 'Poppins', Tahoma, sans-serif;
-    background: linear-gradient(135deg, #1a1210 0%, #2a1f1a 50%, #3a281f 100%);
-    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-dark) 50%, #0d1530 100%);
+    color: var(--text-white);
     line-height: 1.6;
     min-height: 100vh;
 }
 
-/* ---------- 3. ШАПКА ---------- */
+/* ---------- 3. ШАПКА САЙТА ---------- */
 header {
-    background: rgba(26, 18, 16, 0.95);
+    background: rgba(10, 15, 42, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--sunset);
+    border-bottom: 2px solid var(--blue-primary);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -58,7 +58,7 @@ header {
 
 .logo h1 {
     font-size: 28px;
-    background: linear-gradient(135deg, var(--gold), var(--sunset));
+    background: linear-gradient(135deg, var(--text-white), var(--blue-light));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -67,10 +67,10 @@ header {
 
 .logo p {
     font-size: 12px;
-    color: var(--sunset);
+    color: var(--blue-light);
 }
 
-/* ---------- НАВИГАЦИЯ FLEXBOX ---------- */
+/* ---------- НАВИГАЦИЯ ---------- */
 .flex-nav {
     display: flex;
     list-style: none;
@@ -84,8 +84,8 @@ header {
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: rgba(217, 108, 43, 0.15);
-    color: var(--text-light);
+    background: rgba(42, 74, 138, 0.2);
+    color: var(--text-white);
     text-decoration: none;
     border-radius: 30px;
     transition: all 0.3s ease;
@@ -97,16 +97,16 @@ header {
 }
 
 .flex-nav a:hover {
-    background: rgba(217, 108, 43, 0.3);
-    border-color: var(--sunset);
+    background: rgba(74, 122, 181, 0.3);
+    border-color: var(--blue-light);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(217, 108, 43, 0.2);
+    box-shadow: 0 5px 15px var(--shadow-blue);
 }
 
 .flex-nav a.active {
-    background: var(--sunset);
-    color: #1a1210;
-    border-color: var(--gold);
+    background: var(--blue-primary);
+    color: var(--text-white);
+    border-color: var(--blue-light);
 }
 
 /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
@@ -116,67 +116,54 @@ main {
     padding: 0 20px;
 }
 
-/* HERO СЕКЦИЯ - КАК ЗАКАТ В ПУСТЫНЕ */
+/* HERO СЕКЦИЯ */
 .hero {
-    background: linear-gradient(135deg, rgba(217, 108, 43, 0.15), rgba(196, 58, 43, 0.1));
+    background: linear-gradient(135deg, rgba(42, 74, 138, 0.2), rgba(26, 42, 90, 0.4));
     border-radius: 20px;
     padding: 60px 40px;
     text-align: center;
     margin-bottom: 40px;
-    border: 1px solid var(--border-glow);
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "⚔️";
-    position: absolute;
-    font-size: 120px;
-    opacity: 0.05;
-    bottom: -30px;
-    right: -30px;
-    pointer-events: none;
+    border: 1px solid var(--border-blue);
 }
 
 .hero-content h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: var(--text-light);
+    color: var(--text-white);
 }
 
-.sunset-text {
-    color: var(--sunset);
-    text-shadow: 0 0 12px rgba(217, 108, 43, 0.5);
+.blue-text {
+    color: var(--blue-light);
+    text-shadow: 0 0 12px rgba(74, 122, 181, 0.4);
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--sunset);
-    color: #1a1210;
+    background: var(--blue-primary);
+    color: var(--text-white);
     padding: 12px 30px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 20px;
     transition: all 0.3s;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--blue-light);
 }
 
 .btn:hover {
     transform: scale(1.05);
-    background: var(--red-accent);
-    color: var(--text-light);
-    box-shadow: 0 5px 20px rgba(217, 108, 43, 0.4);
+    background: var(--blue-light);
+    box-shadow: 0 5px 20px var(--shadow-blue);
 }
 
 /* Секция ABOUT */
 .about h2 {
-    color: var(--gold);
+    color: var(--blue-light);
     margin: 30px 0 15px 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--sunset);
+    border-bottom: 2px solid var(--border-blue);
 }
 
 .character-list {
@@ -186,12 +173,12 @@ main {
 
 .character-list li {
     padding: 10px 0;
-    border-bottom: 1px solid rgba(217, 108, 43, 0.3);
+    border-bottom: 1px solid rgba(74, 122, 181, 0.3);
 }
 
 .character-list i {
     width: 30px;
-    color: var(--sunset);
+    color: var(--blue-light);
 }
 
 /* GRID ДЛЯ ПРИЧИН */
@@ -208,23 +195,23 @@ main {
     border-radius: 15px;
     text-align: center;
     transition: all 0.3s;
-    border: 1px solid rgba(217, 108, 43, 0.3);
+    border: 1px solid var(--border-blue);
 }
 
 .reason-card:hover {
     transform: translateY(-5px);
-    border-color: var(--sunset);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border-color: var(--blue-light);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .reason-card i {
     font-size: 40px;
-    color: var(--sunset);
+    color: var(--blue-light);
     margin-bottom: 15px;
 }
 
 .reason-card h3 {
-    color: var(--gold);
+    color: var(--blue-pale);
     margin-bottom: 10px;
 }
 
@@ -240,11 +227,11 @@ main {
     grid-template-columns: 1fr auto;
     gap: 20px;
     align-items: center;
-    background: rgba(44, 30, 24, 0.9);
+    background: rgba(15, 26, 58, 0.9);
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 20px;
-    border: 1px solid rgba(217, 108, 43, 0.3);
+    border: 1px solid var(--border-blue);
 }
 
 .stats {
@@ -254,14 +241,14 @@ main {
 }
 
 .stat-item {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     padding: 10px 15px;
     border-radius: 10px;
     text-align: center;
 }
 
 .stat-item i {
-    color: var(--sunset);
+    color: var(--blue-light);
 }
 
 .view-controls {
@@ -270,23 +257,23 @@ main {
 }
 
 .view-btn {
-    background: rgba(217, 108, 43, 0.2);
-    border: 1px solid var(--sunset);
+    background: rgba(42, 74, 138, 0.3);
+    border: 1px solid var(--border-blue);
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
-    color: var(--text-light);
+    color: var(--text-white);
     transition: all 0.3s;
 }
 
 .view-btn.active {
-    background: var(--sunset);
-    color: #1a1210;
+    background: var(--blue-primary);
+    color: var(--text-white);
 }
 
 .view-btn:hover {
-    background: var(--gold);
-    color: #1a1210;
+    background: var(--blue-light);
+    color: var(--blue-deep);
 }
 
 /* Фильтры */
@@ -297,9 +284,9 @@ main {
     flex-wrap: wrap;
     margin-bottom: 30px;
     padding: 15px;
-    background: rgba(44, 30, 24, 0.8);
+    background: rgba(15, 26, 58, 0.8);
     border-radius: 15px;
-    border: 1px solid rgba(217, 108, 43, 0.3);
+    border: 1px solid var(--border-blue);
 }
 
 .filter-buttons {
@@ -310,18 +297,18 @@ main {
 
 .filter-btn {
     background: transparent;
-    border: 1px solid var(--sunset);
+    border: 1px solid var(--border-blue);
     padding: 8px 20px;
     border-radius: 20px;
     cursor: pointer;
-    color: var(--text-light);
+    color: var(--text-white);
     transition: all 0.3s;
 }
 
 .filter-btn.active,
 .filter-btn:hover {
-    background: var(--sunset);
-    color: #1a1210;
+    background: var(--blue-primary);
+    color: var(--text-white);
 }
 
 /* CSS GRID ГАЛЕРЕЯ */
@@ -343,13 +330,13 @@ main {
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 1px solid rgba(217, 108, 43, 0.3);
+    border: 1px solid var(--border-blue);
 }
 
 .image-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-    border-color: var(--sunset);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--blue-light);
 }
 
 .card-image {
@@ -390,18 +377,18 @@ main {
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    color: var(--text-light);
+    color: var(--text-white);
     transition: all 0.3s;
 }
 
 .like-btn.liked {
-    background: var(--red-accent);
+    background: var(--blue-primary);
     color: white;
 }
 
 .zoom-btn:hover {
-    background: var(--sunset);
-    color: #1a1210;
+    background: var(--blue-light);
+    color: var(--blue-deep);
 }
 
 .card-content {
@@ -409,12 +396,12 @@ main {
 }
 
 .image-title {
-    color: var(--gold);
+    color: var(--blue-pale);
     margin-bottom: 10px;
 }
 
 .image-date {
-    color: var(--sunset);
+    color: var(--blue-light);
     font-size: 12px;
     margin-bottom: 10px;
 }
@@ -432,7 +419,7 @@ main {
 }
 
 .tag {
-    background: rgba(217, 108, 43, 0.2);
+    background: rgba(74, 122, 181, 0.2);
     padding: 4px 12px;
     border-radius: 15px;
     font-size: 11px;
@@ -440,12 +427,12 @@ main {
 }
 
 .gallery-info {
-    background: linear-gradient(135deg, #2a1f1a, #3a281f);
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
     padding: 30px;
     border-radius: 15px;
     text-align: center;
-    border: 1px solid var(--sunset);
-    border-left: 4px solid var(--gold);
+    border: 1px solid var(--border-blue);
+    border-left: 4px solid var(--blue-light);
 }
 
 /* ---------- СТРАНИЦА КОНТАКТОВ ---------- */
@@ -469,23 +456,23 @@ main {
     border-radius: 20px;
     padding: 30px;
     text-align: center;
-    border: 1px solid rgba(217, 108, 43, 0.3);
+    border: 1px solid var(--border-blue);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-avatar i {
     font-size: 80px;
-    color: var(--sunset);
+    color: var(--blue-light);
     margin-bottom: 20px;
 }
 
 .info-card h2 {
-    color: var(--gold);
+    color: var(--blue-pale);
     margin-bottom: 5px;
 }
 
 .specialization {
-    color: var(--sunset);
+    color: var(--blue-light);
     margin-bottom: 20px;
 }
 
@@ -503,7 +490,7 @@ main {
 
 .contact-details i {
     width: 30px;
-    color: var(--sunset);
+    color: var(--blue-light);
 }
 
 .social-links {
@@ -518,7 +505,7 @@ main {
     padding: 10px 20px;
     border-radius: 25px;
     text-decoration: none;
-    color: #1a1210;
+    color: var(--text-white);
     font-weight: bold;
     transition: all 0.3s;
     display: inline-flex;
@@ -526,19 +513,19 @@ main {
     gap: 8px;
 }
 
-.social-btn.telegram { background: #e8a735; }
-.social-btn.vk { background: #d96c2b; }
-.social-btn.discord { background: #b5451a; }
+.social-btn.telegram { background: #2a4a8a; }
+.social-btn.vk { background: #1a3a6a; }
+.social-btn.discord { background: #3a5a9a; }
 
 .social-btn:hover {
     transform: translateY(-3px);
-    filter: brightness(1.1);
+    filter: brightness(1.2);
 }
 
 .work-schedule {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid rgba(217, 108, 43, 0.3);
+    border-top: 1px solid var(--border-blue);
 }
 
 /* Форма */
@@ -548,12 +535,12 @@ main {
     background: var(--card-bg);
     border-radius: 20px;
     padding: 30px;
-    border: 1px solid rgba(217, 108, 43, 0.3);
+    border: 1px solid var(--border-blue);
 }
 
 .feedback-form h2 {
     margin-bottom: 20px;
-    color: var(--gold);
+    color: var(--blue-light);
 }
 
 .form-group {
@@ -563,44 +550,44 @@ main {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: var(--text-light);
+    color: var(--text-white);
 }
 
 .required {
-    color: var(--red-accent);
+    color: var(--blue-light);
 }
 
 .form-input {
     width: 100%;
     padding: 12px 15px;
     background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(217, 108, 43, 0.4);
+    border: 1px solid var(--border-blue);
     border-radius: 10px;
-    color: var(--text-light);
+    color: var(--text-white);
     transition: all 0.3s;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: var(--sunset);
-    box-shadow: 0 0 8px rgba(217, 108, 43, 0.3);
+    border-color: var(--blue-light);
+    box-shadow: 0 0 8px var(--shadow-blue);
 }
 
 .form-input::placeholder {
-    color: rgba(201, 184, 154, 0.4);
+    color: rgba(160, 184, 212, 0.4);
     font-style: italic;
 }
 
 .form-group label::before {
-    content: "⚔️";
-    color: var(--gold);
+    content: "●";
+    color: var(--blue-light);
     margin-right: 8px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .form-group:has(input[required]) label::after {
     content: " (обязательно)";
-    color: var(--red-accent);
+    color: var(--blue-light);
     font-size: 11px;
 }
 
@@ -620,14 +607,14 @@ main {
 }
 
 .checkbox-group input:checked + label {
-    color: var(--gold);
+    color: var(--blue-light);
 }
 
 .submit-btn {
     width: 100%;
     padding: 14px;
-    background: var(--sunset);
-    color: #1a1210;
+    background: var(--blue-primary);
+    color: var(--text-white);
     font-weight: bold;
     border: none;
     border-radius: 30px;
@@ -641,9 +628,8 @@ main {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    background: var(--red-accent);
-    color: var(--text-light);
-    box-shadow: 0 5px 15px rgba(217, 108, 43, 0.3);
+    background: var(--blue-light);
+    box-shadow: 0 5px 15px var(--shadow-blue);
 }
 
 .form-status {
@@ -659,7 +645,7 @@ main {
 }
 
 .faq-section h2 {
-    color: var(--gold);
+    color: var(--blue-light);
     margin-bottom: 20px;
 }
 
@@ -673,14 +659,14 @@ main {
     background: var(--card-bg);
     padding: 20px;
     border-radius: 15px;
-    border-left: 4px solid var(--sunset);
-    border-right: 1px solid rgba(217, 108, 43, 0.3);
-    border-top: 1px solid rgba(217, 108, 43, 0.3);
-    border-bottom: 1px solid rgba(217, 108, 43, 0.3);
+    border-left: 4px solid var(--blue-light);
+    border-right: 1px solid var(--border-blue);
+    border-top: 1px solid var(--border-blue);
+    border-bottom: 1px solid var(--border-blue);
 }
 
 .faq-item h3 {
-    color: var(--gold);
+    color: var(--blue-pale);
     margin-bottom: 10px;
 }
 
@@ -703,29 +689,29 @@ main {
     max-height: 90%;
     margin-top: 50px;
     border-radius: 10px;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--blue-light);
 }
 
 .close {
     position: absolute;
     top: 20px;
     right: 35px;
-    color: var(--sunset);
+    color: var(--blue-light);
     font-size: 40px;
     cursor: pointer;
 }
 
 .close:hover {
-    color: var(--gold);
+    color: var(--blue-pale);
 }
 
 /* ---------- ПОДВАЛ ---------- */
 footer {
-    background: rgba(26, 18, 16, 0.95);
+    background: rgba(10, 15, 42, 0.95);
     text-align: center;
     padding: 30px;
     margin-top: 40px;
-    border-top: 1px solid var(--sunset);
+    border-top: 1px solid var(--blue-primary);
 }
 
 .footer-content p {
@@ -733,18 +719,18 @@ footer {
 }
 
 .js-status {
-    color: var(--gold);
+    color: var(--blue-light);
 }
 
 .anime-quote {
     font-style: italic;
-    color: var(--sunset);
+    color: var(--blue-pale);
 }
 
 /* Выделение текста */
 ::selection {
-    background: var(--sunset);
-    color: #1a1210;
+    background: var(--blue-primary);
+    color: var(--text-white);
 }
 
 /* ---------- АДАПТИВНОСТЬ ---------- */
