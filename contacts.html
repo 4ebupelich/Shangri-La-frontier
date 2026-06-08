@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рубеж Шангри-Ла | Контакты</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><i class="fas fa-dragon"></i> Рубеж Шангри-Ла</h1>
+                <p>Shangri-La Frontier</p>
+            </div>
+            <nav>
+                <ul class="flex-nav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contacts.html" class="active"><i class="fas fa-envelope"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contacts-container">
+        <div class="contacts-wrapper">
+            <!-- Информационная карточка -->
+            <div class="info-card">
+                <div class="card-avatar">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <h2>Иванов Иван</h2>
+                <p class="specialization">Фанат аниме и VR-игр</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-envelope"></i> ivan@shangri-la.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, Россия</p>
+                    <p><i class="fas fa-headset"></i> Тема сайта: «Рубеж Шангри-Ла»</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-btn telegram"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="#" class="social-btn vk"><i class="fab fa-vk"></i> VK</a>
+                    <a href="#" class="social-btn discord"><i class="fab fa-discord"></i> Discord</a>
+                </div>
+                <div class="work-schedule">
+                    <h3><i class="fas fa-clock"></i> График онлайн</h3>
+                    <p>Пн-Пт: 19:00 - 23:00</p>
+                    <p>Сб-Вс: 14:00 - 02:00</p>
+                </div>
+            </div>
+
+            <!-- Форма обратной связи -->
+            <div class="feedback-form">
+                <h2><i class="fas fa-paper-plane"></i> Напишите мне</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Имя <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Как вас зовут?" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-at"></i> Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="example@mail.ru" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topic"><i class="fas fa-tag"></i> Тема сообщения</label>
+                        <select id="topic" name="topic" class="form-input">
+                            <option value="question">Вопрос по сайту</option>
+                            <option value="suggestion">Предложение</option>
+                            <option value="cooperation">Сотрудничество</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> Сообщение <span class="required">*</span></label>
+                        <textarea id="message" name="message" class="form-input" rows="5" placeholder="Ваше сообщение..." required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Я согласен на обработку персональных данных <span class="required">*</span></label>
+                    </div>
+
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Отправить сообщение</button>
+                </form>
+                <div id="form-status" class="form-status"></div>
+            </div>
+        </div>
+
+        <!-- FAQ блок -->
+        <div class="faq-section">
+            <h2><i class="fas fa-question-circle"></i> Часто задаваемые вопросы</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Где можно посмотреть аниме?</h3>
+                    <p>«Рубеж Шангри-Ла» доступен на Crunchyroll, Funimation и в некоторых онлайн-кинотеатрах.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Когда выйдет 3 сезон?</h3>
+                    <p>Премьера 3 сезона запланирована на январь 2027 года.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Стоит ли читать мангу?</h3>
+                    <p>Да! Манга содержит множество деталей, которых нет в аниме.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Как связаться с автором сайта?</h3>
+                    <p>Используйте форму обратной связи выше или напишите в Telegram.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><i class="far fa-copyright"></i> <span id="current-year"></span> Иванов Иван, студент 1 курса. Все права защищены.</p>
+            <p class="js-status"><i class="fas fa-check-circle"></i> JavaScript загружен и работает!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
