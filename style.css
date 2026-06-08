@@ -1,0 +1,276 @@
+/* ========================================
+   ПРАКТИЧЕСКАЯ РАБОТА №2,3,4,5
+   Тема: Рубеж Шангри-Ла (Shangri-La Frontier)
+   ======================================== */
+
+/* ---------- 1. СБРОС СТИЛЕЙ (ПР №2) ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- 2. ОСНОВНЫЕ ПЕРЕМЕННЫЕ И СТИЛИ ---------- */
+:root {
+    --primary-dark: #0a0a1a;
+    --primary-light: #1a1a3a;
+    --neon-green: #0fff50;
+    --neon-blue: #00ffcc;
+    --accent-purple: #764ba2;
+    --text-light: #e0e0e0;
+    --text-white: #ffffff;
+    --card-bg: rgba(26, 26, 58, 0.9);
+    --shadow-glow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0f0f2a 100%);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ---------- 3. ШАПКА САЙТА С FLEXBOX (ПР №2,5) ---------- */
+header {
+    background: rgba(10, 10, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--neon-green);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 20px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    background: linear-gradient(135deg, var(--neon-green), var(--neon-blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 12px;
+    color: var(--neon-blue);
+}
+
+/* ---------- FLEXBOX НАВИГАЦИЯ (ПР №5) ---------- */
+.flex-nav {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(0, 255, 204, 0.1);
+    color: var(--text-white);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.flex-nav a i {
+    font-size: 16px;
+}
+
+.flex-nav a:hover {
+    background: rgba(0, 255, 204, 0.2);
+    border-color: var(--neon-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
+}
+
+.flex-nav a.active {
+    background: var(--neon-green);
+    color: var(--primary-dark);
+    border-color: var(--neon-green);
+}
+
+/* ---------- 4. ОСНОВНОЙ КОНТЕНТ ---------- */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* HERO СЕКЦИЯ */
+.hero {
+    background: linear-gradient(135deg, rgba(118, 75, 162, 0.2), rgba(0, 255, 204, 0.1));
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.neon-text {
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--neon-green);
+    color: var(--primary-dark);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--neon-green);
+}
+
+/* Секция ABOUT */
+.about h2 {
+    color: var(--neon-blue);
+    margin: 30px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 255, 204, 0.3);
+}
+
+.character-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.character-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(0, 255, 204, 0.2);
+}
+
+.character-list i {
+    width: 30px;
+    color: var(--neon-green);
+}
+
+/* GRID ДЛЯ ПРИЧИН (ПР №3) */
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.reason-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s;
+    border: 1px solid rgba(0, 255, 204, 0.2);
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-blue);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.reason-card i {
+    font-size: 40px;
+    color: var(--neon-green);
+    margin-bottom: 15px;
+}
+
+.reason-card h3 {
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+/* ---------- 5. СТИЛИ ДЛЯ ГАЛЕРЕИ (ПР №3) ---------- */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.controls-panel {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    background: rgba(26, 26, 58, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.stat-item {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.view-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.view-btn {
+    background: rgba(0, 255, 204, 0.1);
+    border: 1px solid var(--neon-blue);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: all 0.3s;
+}
+
+.view-btn.active {
+    background: var(--neon-green);
+    color: var(--primary-dark);
+}
+
+/* Фильтры */
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: rgba(26, 26, 58, 0.6);
+    border-radius: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10
