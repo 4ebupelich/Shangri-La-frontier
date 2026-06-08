@@ -1,6 +1,7 @@
 /* ========================================
    ПРАКТИЧЕСКАЯ РАБОТА №2,3,4,5
    Тема: Рубеж Шангри-Ла (Shangri-La Frontier)
+   Стиль: Тёмная синяя тема
    ======================================== */
 
 /* ---------- 1. СБРОС СТИЛЕЙ (ПР №2) ---------- */
@@ -12,20 +13,24 @@
 
 /* ---------- 2. ОСНОВНЫЕ ПЕРЕМЕННЫЕ И СТИЛИ ---------- */
 :root {
-    --primary-dark: #0a0a1a;
-    --primary-light: #1a1a3a;
-    --neon-green: #0fff50;
-    --neon-blue: #00ffcc;
-    --accent-purple: #764ba2;
-    --text-light: #e0e0e0;
-    --text-white: #ffffff;
-    --card-bg: rgba(26, 26, 58, 0.9);
-    --shadow-glow: 0 0 10px rgba(0, 255, 204, 0.3);
+    --primary-dark: #0a0f1a;
+    --primary-medium: #0f172a;
+    --primary-light: #1e293b;
+    --secondary-blue: #2c3e66;
+    --accent-blue: #3b5a9e;
+    --soft-blue: #5b7bb5;
+    --text-light: #cbd5e1;
+    --text-white: #f1f5f9;
+    --text-muted: #94a3b8;
+    --card-bg: rgba(30, 41, 59, 0.95);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.4);
+    --border-color: #334155;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, #0f0f2a 100%);
+    background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 50%, #1a2335 100%);
     color: var(--text-light);
     line-height: 1.6;
     min-height: 100vh;
@@ -33,9 +38,9 @@ body {
 
 /* ---------- 3. ШАПКА САЙТА С FLEXBOX (ПР №2,5) ---------- */
 header {
-    background: rgba(10, 10, 26, 0.95);
+    background: rgba(10, 15, 26, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--neon-green);
+    border-bottom: 2px solid var(--accent-blue);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -54,7 +59,7 @@ header {
 
 .logo h1 {
     font-size: 28px;
-    background: linear-gradient(135deg, var(--neon-green), var(--neon-blue));
+    background: linear-gradient(135deg, var(--text-white), var(--soft-blue));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -63,7 +68,7 @@ header {
 
 .logo p {
     font-size: 12px;
-    color: var(--neon-blue);
+    color: var(--soft-blue);
 }
 
 /* ---------- FLEXBOX НАВИГАЦИЯ (ПР №5) ---------- */
@@ -80,7 +85,7 @@ header {
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    background: rgba(0, 255, 204, 0.1);
+    background: rgba(59, 90, 158, 0.15);
     color: var(--text-white);
     text-decoration: none;
     border-radius: 30px;
@@ -93,16 +98,16 @@ header {
 }
 
 .flex-nav a:hover {
-    background: rgba(0, 255, 204, 0.2);
-    border-color: var(--neon-blue);
+    background: rgba(59, 90, 158, 0.3);
+    border-color: var(--soft-blue);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
+    box-shadow: var(--shadow-sm);
 }
 
 .flex-nav a.active {
-    background: var(--neon-green);
-    color: var(--primary-dark);
-    border-color: var(--neon-green);
+    background: var(--accent-blue);
+    color: var(--text-white);
+    border-color: var(--soft-blue);
 }
 
 /* ---------- 4. ОСНОВНОЙ КОНТЕНТ ---------- */
@@ -114,49 +119,52 @@ main {
 
 /* HERO СЕКЦИЯ */
 .hero {
-    background: linear-gradient(135deg, rgba(118, 75, 162, 0.2), rgba(0, 255, 204, 0.1));
+    background: linear-gradient(135deg, rgba(44, 62, 102, 0.3), rgba(30, 41, 59, 0.5));
     border-radius: 20px;
     padding: 60px 40px;
     text-align: center;
     margin-bottom: 40px;
-    border: 1px solid rgba(0, 255, 204, 0.3);
+    border: 1px solid var(--border-color);
 }
 
 .hero-content h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: var(--text-white);
 }
 
-.neon-text {
-    color: var(--neon-green);
-    text-shadow: 0 0 10px var(--neon-green);
+.soft-text {
+    color: var(--soft-blue);
+    text-shadow: 0 0 8px rgba(91, 123, 181, 0.3);
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--neon-green);
-    color: var(--primary-dark);
+    background: var(--accent-blue);
+    color: var(--text-white);
     padding: 12px 30px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 20px;
     transition: all 0.3s;
+    border: 1px solid var(--soft-blue);
 }
 
 .btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px var(--neon-green);
+    background: var(--soft-blue);
+    box-shadow: var(--shadow-md);
 }
 
 /* Секция ABOUT */
 .about h2 {
-    color: var(--neon-blue);
+    color: var(--soft-blue);
     margin: 30px 0 15px 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgba(0, 255, 204, 0.3);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .character-list {
@@ -166,12 +174,12 @@ main {
 
 .character-list li {
     padding: 10px 0;
-    border-bottom: 1px dashed rgba(0, 255, 204, 0.2);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .character-list i {
     width: 30px;
-    color: var(--neon-green);
+    color: var(--soft-blue);
 }
 
 /* GRID ДЛЯ ПРИЧИН (ПР №3) */
@@ -188,18 +196,18 @@ main {
     border-radius: 15px;
     text-align: center;
     transition: all 0.3s;
-    border: 1px solid rgba(0, 255, 204, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 .reason-card:hover {
     transform: translateY(-5px);
-    border-color: var(--neon-blue);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--soft-blue);
+    box-shadow: var(--shadow-md);
 }
 
 .reason-card i {
     font-size: 40px;
-    color: var(--neon-green);
+    color: var(--soft-blue);
     margin-bottom: 15px;
 }
 
@@ -220,10 +228,11 @@ main {
     grid-template-columns: 1fr auto;
     gap: 20px;
     align-items: center;
-    background: rgba(26, 26, 58, 0.8);
+    background: rgba(30, 41, 59, 0.9);
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 20px;
+    border: 1px solid var(--border-color);
 }
 
 .stats {
@@ -233,7 +242,7 @@ main {
 }
 
 .stat-item {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     padding: 10px 15px;
     border-radius: 10px;
     text-align: center;
@@ -245,8 +254,8 @@ main {
 }
 
 .view-btn {
-    background: rgba(0, 255, 204, 0.1);
-    border: 1px solid var(--neon-blue);
+    background: rgba(59, 90, 158, 0.2);
+    border: 1px solid var(--border-color);
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
@@ -255,8 +264,14 @@ main {
 }
 
 .view-btn.active {
-    background: var(--neon-green);
-    color: var(--primary-dark);
+    background: var(--accent-blue);
+    color: var(--text-white);
+    border-color: var(--soft-blue);
+}
+
+.view-btn:hover {
+    background: var(--soft-blue);
+    color: var(--text-white);
 }
 
 /* Фильтры */
@@ -267,8 +282,9 @@ main {
     flex-wrap: wrap;
     margin-bottom: 30px;
     padding: 15px;
-    background: rgba(26, 26, 58, 0.6);
+    background: rgba(30, 41, 59, 0.7);
     border-radius: 15px;
+    border: 1px solid var(--border-color);
 }
 
 .filter-buttons {
@@ -279,7 +295,7 @@ main {
 
 .filter-btn {
     background: transparent;
-    border: 1px solid var(--neon-blue);
+    border: 1px solid var(--border-color);
     padding: 8px 20px;
     border-radius: 20px;
     cursor: pointer;
@@ -289,8 +305,9 @@ main {
 
 .filter-btn.active,
 .filter-btn:hover {
-    background: var(--neon-green);
-    color: var(--primary-dark);
+    background: var(--accent-blue);
+    color: var(--text-white);
+    border-color: var(--soft-blue);
 }
 
 /* CSS GRID ГАЛЕРЕЯ (ПР №3) */
@@ -313,13 +330,13 @@ main {
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 255, 204, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 .image-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    border-color: var(--neon-green);
+    box-shadow: var(--shadow-md);
+    border-color: var(--soft-blue);
 }
 
 .card-image {
@@ -365,13 +382,17 @@ main {
 }
 
 .like-btn.liked {
-    background: #ff4757;
+    background: #4a6fa5;
     color: white;
 }
 
+.like-btn.liked i {
+    font-weight: 900;
+}
+
 .zoom-btn:hover {
-    background: var(--neon-green);
-    color: var(--primary-dark);
+    background: var(--accent-blue);
+    color: var(--text-white);
 }
 
 .card-content {
@@ -384,7 +405,7 @@ main {
 }
 
 .image-date {
-    color: var(--neon-blue);
+    color: var(--soft-blue);
     font-size: 12px;
     margin-bottom: 10px;
 }
@@ -401,18 +422,20 @@ main {
 }
 
 .tag {
-    background: rgba(0, 255, 204, 0.2);
+    background: rgba(91, 123, 181, 0.2);
     padding: 4px 12px;
     border-radius: 15px;
     font-size: 11px;
+    color: var(--text-muted);
 }
 
 /* Информационный блок галереи */
 .gallery-info {
-    background: linear-gradient(135deg, var(--accent-purple), #3a5a8c);
+    background: linear-gradient(135deg, #1e293b, #2c3e66);
     padding: 30px;
     border-radius: 15px;
     text-align: center;
+    border: 1px solid var(--border-color);
 }
 
 /* ---------- 6. СТИЛИ ДЛЯ СТРАНИЦЫ КОНТАКТОВ (ПР №4) ---------- */
@@ -436,13 +459,13 @@ main {
     border-radius: 20px;
     padding: 30px;
     text-align: center;
-    border: 1px solid rgba(0, 255, 204, 0.3);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .card-avatar i {
     font-size: 80px;
-    color: var(--neon-green);
+    color: var(--soft-blue);
     margin-bottom: 20px;
 }
 
@@ -452,7 +475,7 @@ main {
 }
 
 .specialization {
-    color: var(--neon-blue);
+    color: var(--soft-blue);
     margin-bottom: 20px;
 }
 
@@ -460,7 +483,7 @@ main {
     text-align: left;
     margin: 20px 0;
     padding: 15px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 15px;
 }
 
@@ -470,7 +493,7 @@ main {
 
 .contact-details i {
     width: 30px;
-    color: var(--neon-green);
+    color: var(--soft-blue);
 }
 
 .social-links {
@@ -492,19 +515,19 @@ main {
     gap: 8px;
 }
 
-.social-btn.telegram { background: #0088cc; }
-.social-btn.vk { background: #4c75a3; }
-.social-btn.discord { background: #5865f2; }
+.social-btn.telegram { background: #2c3e66; }
+.social-btn.vk { background: #2c3e66; }
+.social-btn.discord { background: #2c3e66; }
 
 .social-btn:hover {
     transform: translateY(-3px);
-    filter: brightness(1.1);
+    filter: brightness(1.2);
 }
 
 .work-schedule {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid rgba(0, 255, 204, 0.3);
+    border-top: 1px solid var(--border-color);
 }
 
 /* Форма обратной связи (ПР №4) */
@@ -514,12 +537,12 @@ main {
     background: var(--card-bg);
     border-radius: 20px;
     padding: 30px;
-    border: 1px solid rgba(0, 255, 204, 0.3);
+    border: 1px solid var(--border-color);
 }
 
 .feedback-form h2 {
     margin-bottom: 20px;
-    color: var(--neon-blue);
+    color: var(--soft-blue);
 }
 
 .form-group {
@@ -533,14 +556,14 @@ main {
 }
 
 .required {
-    color: #ff4757;
+    color: #7b8cae;
 }
 
 .form-input {
     width: 100%;
     padding: 12px 15px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(0, 255, 204, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     color: var(--text-white);
     transition: all 0.3s;
@@ -548,28 +571,28 @@ main {
 
 .form-input:focus {
     outline: none;
-    border-color: var(--neon-green);
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    border-color: var(--soft-blue);
+    box-shadow: 0 0 8px rgba(91, 123, 181, 0.3);
 }
 
 .form-input:valid:not(:placeholder-shown) {
-    border-color: var(--neon-green);
+    border-color: var(--soft-blue);
 }
 
 .form-input:invalid:not(:placeholder-shown) {
-    border-color: #ff4757;
+    border-color: #7b8cae;
 }
 
 /* Псевдоэлемент для placeholder (ПР №4) */
 .form-input::placeholder {
-    color: rgba(224, 224, 224, 0.5);
+    color: rgba(148, 163, 184, 0.5);
     font-style: italic;
 }
 
 /* Псевдоэлемент ::before для меток */
 .form-group label::before {
     content: "►";
-    color: var(--neon-green);
+    color: var(--soft-blue);
     margin-right: 8px;
     font-size: 12px;
 }
@@ -577,7 +600,7 @@ main {
 /* Псевдоэлемент ::after для обязательных полей */
 .form-group:has(input[required]) label::after {
     content: " (обязательно)";
-    color: #ff4757;
+    color: #7b8cae;
     font-size: 11px;
 }
 
@@ -598,14 +621,14 @@ main {
 
 /* Стилизация чекбокса при :checked */
 .checkbox-group input:checked + label {
-    color: var(--neon-green);
+    color: var(--soft-blue);
 }
 
 .submit-btn {
     width: 100%;
     padding: 14px;
-    background: var(--neon-green);
-    color: var(--primary-dark);
+    background: var(--accent-blue);
+    color: var(--text-white);
     border: none;
     border-radius: 30px;
     font-weight: bold;
@@ -615,11 +638,13 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    border: 1px solid var(--soft-blue);
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 255, 204, 0.4);
+    background: var(--soft-blue);
+    box-shadow: var(--shadow-md);
 }
 
 .submit-btn:active {
@@ -639,7 +664,7 @@ main {
 }
 
 .faq-section h2 {
-    color: var(--neon-blue);
+    color: var(--soft-blue);
     margin-bottom: 20px;
 }
 
@@ -653,7 +678,10 @@ main {
     background: var(--card-bg);
     padding: 20px;
     border-radius: 15px;
-    border-left: 4px solid var(--neon-green);
+    border-left: 4px solid var(--soft-blue);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .faq-item h3 {
@@ -679,6 +707,8 @@ main {
     max-width: 90%;
     max-height: 90%;
     margin-top: 50px;
+    border-radius: 10px;
+    border: 2px solid var(--soft-blue);
 }
 
 .close {
@@ -692,11 +722,11 @@ main {
 
 /* ---------- 8. ПОДВАЛ ---------- */
 footer {
-    background: rgba(10, 10, 26, 0.95);
+    background: rgba(10, 15, 26, 0.95);
     text-align: center;
     padding: 30px;
     margin-top: 40px;
-    border-top: 1px solid var(--neon-green);
+    border-top: 1px solid var(--accent-blue);
 }
 
 .footer-content p {
@@ -704,18 +734,18 @@ footer {
 }
 
 .js-status {
-    color: var(--neon-green);
+    color: var(--soft-blue);
 }
 
 .anime-quote {
     font-style: italic;
-    color: var(--neon-blue);
+    color: var(--text-muted);
 }
 
 /* Выделение текста (псевдоэлемент ::selection) */
 ::selection {
-    background: var(--neon-green);
-    color: var(--primary-dark);
+    background: var(--accent-blue);
+    color: var(--text-white);
 }
 
 /* ---------- 9. АДАПТИВНОСТЬ (МЕДИА-ЗАПРОСЫ) ---------- */
