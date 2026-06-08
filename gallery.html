@@ -82,7 +82,7 @@
             <!-- Карточка 2 -->
             <article class="image-card" data-category="hero">
                 <div class="card-image">
-                    <img src="psiger_o.jpg" alt="Псигер-0" class="gallery-img" loading="lazy">
+                    <img src="psiger_0.jpg" alt="Псигер-0" class="gallery-img" loading="lazy">
                     <div class="image-overlay">
                         <button class="like-btn" data-id="2">
                             <i class="far fa-heart"></i>
@@ -182,7 +182,7 @@
             <!-- Карточка 6 -->
             <article class="image-card" data-category="battle">
                 <div class="card-image">
-                    <img src="sunraku_vs_lukaon" alt="Битва с Люкаон" class="gallery-img" loading="lazy">
+                    <img src="sunraku_vs_lukaon.jpg" alt="Битва с Люкаон" class="gallery-img" loading="lazy">
                     <div class="image-overlay">
                         <button class="like-btn" data-id="6">
                             <i class="far fa-heart"></i>
@@ -207,7 +207,260 @@
             <!-- Карточка 7 -->
             <article class="image-card" data-category="battle">
                 <div class="card-image">
-                    <img src="command_figth.jpg" alt="Командная битва" class="gallery-img" loading="lazy">
+                    <img src="<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рубеж Шангри-Ла | Галерея</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1><i class="fas fa-dragon"></i> Рубеж Шангри-Ла</h1>
+                <p>Shangri-La Frontier</p>
+            </div>
+            <nav>
+                <ul class="flex-nav">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Галерея</a></li>
+                    <li><a href="contacts.html"><i class="fas fa-envelope"></i> Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="gallery-container">
+        <div class="controls-panel">
+            <div class="stats">
+                <span class="stat-item">
+                    <i class="fas fa-image"></i>
+                    Изображений: <span id="image-counter">0</span>
+                </span>
+                <span class="stat-item">
+                    <i class="fas fa-heart" style="color: #ff4757;"></i>
+                    Всего лайков: <span id="total-likes">0</span>
+                </span>
+            </div>
+            <div class="view-controls">
+                <button id="grid-view" class="view-btn active"><i class="fas fa-th"></i> Сетка</button>
+                <button id="list-view" class="view-btn"><i class="fas fa-list"></i> Список</button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <h3><i class="fas fa-filter"></i> Фильтры:</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="hero">Герои</button>
+                <button class="filter-btn" data-filter="boss">Боссы</button>
+                <button class="filter-btn" data-filter="battle">Битвы</button>
+            </div>
+        </div>
+
+        <!-- CSS Grid галерея -->
+        <div class="gallery-grid" id="image-gallery">
+            <!-- Карточка 1 -->
+            <article class="image-card" data-category="hero">
+                <div class="card-image">
+                    <img src="sunraku.png" alt="Санраку - главный герой" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="1">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Санраку (Ракуро Хидзутомэ)</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> Главный герой</p>
+                    <p class="image-description">Мастер прохождения «трешовых» игр. В Рубеже Шангри-Ла использует маску птицы и два кинжала.</p>
+                    <div class="image-tags">
+                        <span class="tag">герой</span>
+                        <span class="tag">санраку</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 2 -->
+            <article class="image-card" data-category="hero">
+                <div class="card-image">
+                    <img src="images/psyger.jpg" alt="Псигер-0" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Псагер-0 (Рей Сайга)</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> сильнейший удар, тайно влюблена в Санраку</p>
+                    <p class="image-description">Высокоуровневый игрок, обладает титулом "сильнейший удар"</p>
+                    <div class="image-tags">
+                        <span class="tag">герой</span>
+                        <span class="tag">псайгер</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="image-card" data-category="hero">
+                <div class="card-image">
+                    <img src="images/arthur.jpg" alt="Артур Пенсилгон" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="3">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Артур Пенсилгон (Това Аманэ)</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> Самый подлый игрок</p>
+                    <p class="image-description">Девушка, которая ради победы готова на все, даже на самые подлые и хитрые уловки. В реальной жизни явлеяется популярной моделью</p>
+                    <div class="image-tags">
+                        <span class="tag">герой</span>
+                        <span class="tag">артур</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 4 -->
+            <article class="image-card" data-category="boss">
+                <div class="card-image">
+                    <img src="images/lycagon.jpg" alt="Люкаон - Чёрный волк" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="4">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Люкаон — Чёрный волк</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> Уникальный босс</p>
+                    <p class="image-description">Один из семи легендарных уникальных монстров, которой может исчезать во тьме и создавать теневых клонов. На врагов, которых она признает оставляет метку в виде шрамов.</p>
+                    <div class="image-tags">
+                        <span class="tag">босс</span>
+                        <span class="tag">люкаон</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 5 -->
+            <article class="image-card" data-category="boss">
+                <div class="card-image">
+                    <img src="images/wethermon.jpg" alt="Везермон - Страж могилы" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="5">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Везермон — Страж Могилы</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> Легендарный босс</p>
+                    <p class="image-description">Могущественный самурай, который сковал себя в доспехи из будущего. Охраняет могилу своей возоюбленной</p>
+                    <div class="image-tags">
+                        <span class="tag">босс</span>
+                        <span class="tag">везермон</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 6 -->
+            <article class="image-card" data-category="battle">
+                <div class="card-image">
+                    <img src="images/battle1.jpg" alt="Битва с Люкаон" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="6">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Эпичная битва с Люкаон</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 1 сезон, 6 серия</p>
+                    <p class="image-description">Одно из самых захватывающих сражений в аниме. Санраку против Чёрного волка.</p>
+                    <div class="image-tags">
+                        <span class="tag">битва</span>
+                        <span class="tag">эпик</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 7 -->
+            <article class="image-card" data-category="battle">
+                <div class="card-image">
+                    <img src="images/battle2.jpg" alt="Командная битва" class="gallery-img" loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="7">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Командное сражение</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> конец 1 сезона</p>
+                    <p class="image-description">Санраку, Ай Катсуо и Артур Пенсилгон объединяются против Стража могилы Везермона</p>
+                    <div class="image-tags">
+                        <span class="tag">битва</span>
+                        <span class="tag">команда</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <aside class="gallery-info">
+            <h3><i class="fas fa-lightbulb"></i> Интересный факт</h3>
+            <p>Аниме «Рубеж Шангри-Ла» основано на одноимённой манге, которая до сих пор выходит. На момент 2025 года вышло уже 2 сезона, а третий запланирован на январь 2027 года!</p>
+        </aside>
+    </main>
+
+    <!-- Модальное окно для просмотра изображения -->
+    <div id="image-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p><i class="far fa-copyright"></i> <span id="current-year"></span> Иванов-Давыдов Вячеслав, студент 1 курса. Все права защищены.</p>
+            <p class="js-status"><i class="fas fa-check-circle"></i> JavaScript загружен и работает!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>" alt="Командная битва" class="gallery-img" loading="lazy">
                     <div class="image-overlay">
                         <button class="like-btn" data-id="7">
                             <i class="far fa-heart"></i>
